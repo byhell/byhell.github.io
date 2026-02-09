@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Gabriel Ferreira Pinto - Senior Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f0d875;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--gold);
+        }
+
+        .contact-item::before {
+            content: "▸ ";
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* Professional Profile */
+        .profile-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-bullets li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .profile-bullets li::before {
+            content: "▸";
+            color: var(--gold);
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: "→";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Experience */
+        .experience-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 35px;
+        }
+
+        .experience-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .experience-item::after {
+            content: "";
+            width: 2px;
+            background: #ddd;
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            bottom: -20px;
+        }
+
+        .experience-item:last-child::after {
+            display: none;
+        }
+
+        .company-meta {
+            font-style: italic;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul li::marker {
+            color: var(--gold);
+        }
+
+        .tech-tags {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        /* Awards */
+        .award-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--light-gray);
+            border-left: 4px solid var(--gold);
+        }
+
+        .award-item h4 {
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .award-item a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .award-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 20px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .project-card h4 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Interests */
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .interests-list li {
+            background: var(--gold);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+            header {
+                background: white;
+                color: black;
+                border-bottom: 3px solid black;
+            }
+            h1 {
+                color: black;
+            }
+            .tagline {
+                color: black;
+            }
+            .contact-item {
+                color: black;
+            }
+            .contact-item::before {
+                color: black;
+            }
+            h2 {
+                border-bottom: 2px solid black;
+            }
+            .profile-bullets li::before,
+            .skill-category li::before {
+                color: black;
+            }
+            .experience-item::before {
+                background: black;
+            }
+            .project-card,
+            .award-item {
+                background: white;
+                border: 1px solid #ddd;
+            }
+            .interests-list li {
+                background: white;
+                border: 1px solid black;
+                color: black;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            main {
+                padding: 30px 20px;
+            }
+            header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <img src="https://via.placeholder.com/150" alt="Carlos Pinto" class="profile-img">
+            <h1>Carlos Gabriel Ferreira Pinto</h1>
+            <p class="tagline">Senior Software Engineer | Backend Architecture & Full-Stack Development</p>
+
+            <div class="contact-info">
+                <a href="mailto:carlosgabrielfpinto@gmail.com" class="contact-item">carlosgabrielfpinto@gmail.com</a>
+                <a href="tel:+351962650051" class="contact-item">+351 962 650 051</a>
+                <a href="https://www.linkedin.com/in/cgabrielpinto/" target="_blank" class="contact-item">LinkedIn</a>
+                <a href="https://github.com/byhell" target="_blank" class="contact-item">GitHub</a>
+                <span class="contact-item">Braga, Portugal</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Professional Profile -->
+            <section>
+                <h2>Professional Profile</h2>
+                <ul class="profile-bullets">
+                    <li>Backend architecture expert specializing in Node.js, TypeScript, and Python ecosystems with 10+ years of experience building scalable distributed systems</li>
+                    <li>Technical leader with proven track record mentoring engineering teams and establishing software best practices that reduce technical debt and accelerate delivery</li>
+                    <li>Full-stack engineer skilled in designing microservices architectures, cloud-native solutions, and high-performance integrations at enterprise scale</li>
+                </ul>
+            </section>
+
+            <!-- Professional Summary -->
+            <section>
+                <h2>Professional Summary</h2>
+                <p>Senior Software Engineer with over 10 years of experience architecting and delivering scalable backend systems, cloud-native solutions, and full-stack applications across diverse industries including food delivery, industrial IoT, healthcare, and enterprise software. Proven expertise in designing high-performance microservices architectures, leading technical teams, and building mission-critical integrations at scale.</p>
+                <p style="margin-top: 15px;">As a solo architect at CARI/The Taken Seat, I maintained 20+ enterprise integrations supporting 10,000+ restaurants and 15,000+ products while engineering sub-100ms search infrastructure. Previously co-founded Striknowledge as Tech Lead and Solution Architect, winning prestigious awards including Premio João Cordeiro 2016 and Premio Saúde Sustentável 2017 for healthcare technology innovations.</p>
+            </section>
+
+            <!-- Skills -->
+            <section>
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Languages & Frameworks</h4>
+                        <ul>
+                            <li>Node.js (Expert)</li>
+                            <li>TypeScript (Expert)</li>
+                            <li>Python (Expert)</li>
+                            <li>Django / DRF (Expert)</li>
+                            <li>React</li>
+                            <li>GraphQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Databases & Search</h4>
+                        <ul>
+                            <li>MongoDB (NoSQL)</li>
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                            <li>DynamoDB</li>
+                            <li>Typesense</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & DevOps</h4>
+                        <ul>
+                            <li>AWS (EC2, S3, SageMaker)</li>
+                            <li>Docker</li>
+                            <li>Heroku / Render</li>
+                            <li>Supabase</li>
+                            <li>CI/CD Pipelines</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Architecture</h4>
+                        <ul>
+                            <li>Microservices</li>
+                            <li>RESTful APIs</li>
+                            <li>Event-Driven Systems</li>
+                            <li>System Integration</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Leadership</h4>
+                        <ul>
+                            <li>Technical Leadership</li>
+                            <li>Team Mentoring</li>
+                            <li>Code Reviews</li>
+                            <li>Architecture Design</li>
+                            <li>Agile/Scrum</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section>
+                <h2>Professional Experience</h2>
+
+                <div class="experience-item">
+                    <h3>Senior Software Engineer</h3>
+                    <p class="company-meta">CARI / The Taken Seat • Feb 2022 – Present (4 years) • Braga, Portugal</p>
+                    <p><strong>Solo architect and developer for enterprise-scale food delivery platform integrations and search infrastructure.</strong></p>
+                    <ul>
+                        <li><strong>Architected and maintained 20+ third-party integrations</strong> as sole developer, connecting core platform with 15 food aggregator APIs (Deliverect, Feedus, Urban Piper, Grubtech, Taw9eel, Americana) and 5 delivery provider systems (Armada, Wyak, Do Delivery), ensuring 99.9% data synchronization reliability</li>
+                        <li><strong>Engineered high-performance search infrastructure</strong> using Typesense, enabling real-time filtering and discovery across 10,000+ restaurants and 15,000+ grocery products with sub-100ms query response times</li>
+                        <li><strong>Designed scalable NoSQL data models</strong> in MongoDB for flexible menu and product catalog system, supporting dynamic attribute mapping and seamless updates across diverse merchant datasets</li>
+                        <li><strong>Established backend architecture standards</strong> using TypeScript and Node.js microservices, implementing code quality patterns</li>
+                    </ul>
+                    <p class="tech-tags">Technologies: Node.js, TypeScript, MongoDB, Typesense, Microservices, REST APIs</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <p class="company-meta">Kelvin Inc. • Oct 2019 – Feb 2022 (2 years 5 months) • Braga, Portugal</p>
+                    <p><strong>Bridged Data Science and Production by building robust ML infrastructure and industrial IoT solutions.</strong></p>
+                    <ul>
+                        <li><strong>Designed and deployed ML training pipelines</strong> for time-series event prediction using TensorFlow, including automated hyperparameter tuning that reduced training time by 60%</li>
+                        <li><strong>Optimized model inference deployment</strong> using TFLite with Cython optimizations, achieving 10x performance improvement for edge deployment</li>
+                        <li><strong>Developed Kelvin SDK</strong>: Python CLI + Docker containerization toolkit that streamlined workflows and accelerated deployment for industrial IoT environments</li>
+                        <li><strong>Delivered AWS SiteWise integration</strong> improving real-time data ingestion and observability for edge operations</li>
+                        <li><strong>Championed software best practices</strong>, establishing code review standards and testing frameworks</li>
+                    </ul>
+                    <p class="tecf-tags">Technologies: Python, TensorFlow, TFLite, Cython, Docker, AWS (SageMaker, SiteWise, EC2)</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Tech Lead & Software Architect</h3>
+                    <p class="company-meta">Q-Better • Jan 2019 – Sep 2019 (9 months) • Braga, Portugal</p>
+                    <p><strong>Led technical team and delivered full-stack solutions with modern web technologies.</strong></p>
+                    <ul>
+                        <li><strong>Led team of 8 junior developers</strong> as Tech Lead, providing technical mentorship, architecture design, and code review guidance</li>
+                        <li><strong>Architected scalable full-stack solutions</strong>, defining system architecture and technical specifications in collaboration with Product and Design teams</li>
+                        <li><strong>Built modern web applications</strong> using React and Semantic UI on frontend, Django/Python REST and GraphQL APIs on backend, deployed on AWS infrastructure</li>
+                        <li><strong>Designed database schemas</strong> and optimized PostgreSQL queries for performance at scale</li>
+                    </ul>
+                    <p class="tech-tags">Technologies: React, Semantic UI, Django, Python, GraphQL, PostgreSQL, AWS</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Software Engineer & Co-Founder</h3>
+                    <p class="company-meta">Striknowledge • Jul 2015 – Sep 2019 (4 years 3 months) • Braga, Portugal</p>
+                    <p><strong>Tech Lead and Solution Architect for cloud-based software consultancy specializing in IoT and web applications.</strong></p>
+                    <ul>
+                        <li><strong>Served as Tech Lead and Software Architect</strong>, defining technical direction and system architecture for multiple client projects</li>
+                        <li><strong>Architected meds.pt platform</strong>: Built custom full-stack framework combining Django backend with React frontend, enabling rapid feature development and reducing time-to-market</li>
+                        <li><strong>Won Premio João Cordeiro 2016</strong> for healthcare innovation with Farmácia Alentejana (Castro Verde)</li>
+                        <li><strong>Won Premio Saúde Sustentável 2017</strong> (Cuidados Primários) with Farmácia da Cumieira</li>
+                        <li><strong>Mentored junior developers</strong>, establishing coding standards and conducting technical training sessions</li>
+                        <li><strong>Delivered IoT solutions</strong> including CLIMAWIN (energy-efficient window system) and client platforms</li>
+                    </ul>
+                    <p class="tech-tags">Technologies: Django, React, Backbone.js, PostgreSQL, AWS, Heroku, IoT Systems</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Researcher</h3>
+                    <p class="company-meta">Embedded Systems Research Group (ESRG), Universidade do Minho • Jul 2013 – Jun 2015 (2 years)</p>
+                    <p><strong>Developed cloud-based embedded systems and IoT applications for energy management and digital signage.</strong></p>
+                    <ul>
+                        <li><strong>CLIMAWIN - Energy Management System:</strong> Developed full-stack management backoffice for IoT window system that captures heat loss to preheat fresh air, increasing comfort and reducing energy costs. Built Django backend with React frontend for device monitoring and control</li>
+                        <li><strong>StandbyPlayer - Digital Signage Platform:</strong> Engineered backoffice application for media playback system (image, audio, video) with complex scheduler and playlist management capabilities. Built using ExtJS and PHP with RedBean ORM</li>
+                        <li><strong>Cloud-based IoT research:</strong> Focused on distributed systems architecture and embedded systems integration with cloud services</li>
+                    </ul>
+                    <p class="tech-tags">Technologies: Django, React, ExtJS, PHP, RedBean ORM, Embedded Systems, IoT, Cloud Computing</p>
+                </div>
+            </section>
+
+            <!-- Awards & Achievements -->
+            <section>
+                <h2>Awards & Achievements</h2>
+                <div class="award-item">
+                    <h4>🏆 Premio João Cordeiro 2016</h4>
+                    <p>Healthcare innovation award for meds.pt platform with Farmácia Alentejana (Castro Verde)</p>
+                    <a href="https://www.youtube.com/watch?v=KibXHmKcHzA" target="_blank">Watch Award Ceremony →</a>
+                </div>
+                <div class="award-item">
+                    <h4>🏆 Premio Saúde Sustentável 2017</h4>
+                    <p>Sustainable Health Award - Primary Care Category with Farmácia da Cumieira for healthcare technology solutions</p>
+                </div>
+            </section>
+
+            <!-- Personal Projects -->
+            <section>
+                <h2>Personal Projects & Client Work</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h4>NMD Padel</h4>
+                        <p>Sports facility management platform for padel courts and clubs</p>
+                        <a href="https://nmd-padel.pt/" target="_blank">Visit Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h4>Arquitec</h4>
+                        <p>Architecture and construction industry web platform</p>
+                        <a href="https://www.arquitec.pt/" target="_blank">Visit Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h4>DiveEspaco</h4>
+                        <p>Training and consulting platform for professional development and education</p>
+                        <a href="https://www.diverespaco.com/" target="_blank">Visit Project →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section>
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <h3>Master's Degree (Mestrado) in Engineering</h3>
+                    <h4>Industrial Electronics and Computers</h4>
+                    <p class="company-meta">Universidade do Minho • 2007 – 2013 • Guimarães, Portugal</p>
+                </div>
+                <div class="experience-item">
+                    <h3>High School Diploma</h3>
+                    <p class="company-meta">Escola Secundária de Ponte de Lima • 2004 – 2007</p>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section>
+                <h2>Languages</h2>
+                <p><strong>Portuguese:</strong> Native</p>
+                <p><strong>English:</strong> Professional Working Proficiency</p>
+            </section>
+
+            <!-- Interests -->
+            <section>
+                <h2>Interests</h2>
+                <ul class="interests-list">
+                    <li>⚽ Football</li>
+                    <li>🎾 Padel</li>
+                    <li>🚴 Cycling</li>
+                    <li>💻 Open Source</li>
+                    <li>🏗️ System Architecture</li>
+                    <li>🤖 Machine Learning</li>
+                    <li>☁️ Cloud Infrastructure</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Carlos Gabriel Ferreira Pinto. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
