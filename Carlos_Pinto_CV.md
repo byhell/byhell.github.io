@@ -12,7 +12,7 @@
 
 ## Professional Summary
 
-Senior Software Engineer with 10+ years of experience architecting and delivering scalable backend systems, cloud-native solutions, and full-stack applications. Proven expertise in designing high-performance microservices architectures, leading technical teams, and building mission-critical integrations at scale. Expert in Node.js, TypeScript, and Python ecosystems with deep knowledge of cloud infrastructure, database design, and DevOps practices.
+Senior Software Engineer with 10+ years of experience architecting and delivering scalable backend systems, cloud-native solutions, and full-stack applications. Proven expertise in designing high-performance microservices architectures, leading technical teams, and building mission-critical integrations at scale. Specialized in Node.js, TypeScript, and Python ecosystems with deep knowledge of cloud infrastructure, database design, and DevOps practices.
 
 **Key Strengths:** Solution Architecture • Microservices Design • API Development • Technical Leadership • System Integration • Cloud Infrastructure • Performance Optimization
 
@@ -20,15 +20,13 @@ Senior Software Engineer with 10+ years of experience architecting and deliverin
 
 ## Core Technical Skills
 
-**Expert:** Node.js, TypeScript, Python, Django, Django REST Framework
+**Languages & Frameworks:** Node.js, TypeScript, Python, Django, Django REST Framework, React, GraphQL
 
-**Backend & Architecture:** Microservices Architecture, RESTful APIs, GraphQL, Event-Driven Systems, API Design Patterns
+**Backend & Architecture:** Microservices Architecture, RESTful APIs, Event-Driven Systems, API Design Patterns
 
 **Databases:** MongoDB (NoSQL), PostgreSQL, MySQL, DynamoDB, Typesense (Search)
 
 **Cloud & DevOps:** AWS (EC2, S3, SageMaker, DynamoDB, SiteWise), Docker, Heroku, Render, Supabase
-
-**Frontend:** React, Semantic UI, Backbone.js, ExtJS
 
 **Tools & Practices:** Git, CI/CD Pipelines, TensorFlow/TFLite, Code Quality Standards, Agile/Scrum
 
